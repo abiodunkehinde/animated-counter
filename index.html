@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Animated Counter</title>
+  <style>
+    body { background: #f1f2f6; height: 100vh; display: flex; justify-content: center; align-items: center; margin: 0; }
+    .counter { font-size: 4em; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <div class="counter" id="count">0</div>
+  <script>
+    let count = 0;
+    const target = 100;
+    const inc = target / 100;
+    const timer = setInterval(() => {
+      count += inc;
+      document.getElementById('count').textContent = Math.round(count);
+      if(count >= target) clearInterval(timer);
+    }, 20);
+  </script>
+</body>
+</html>
